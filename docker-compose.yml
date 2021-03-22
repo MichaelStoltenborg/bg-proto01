@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: dbtest
+    ports: 
+      - '5433:5432'
+    volumes:
+      - bgapi-db:/var/lib/postgresql/data
+
+  bgapi:
+    build:  
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DB_SCHEMA: postgres
+      DB_USER: postgres
+      DB_PASSWORD: dbtest
+      DB_HOST: postgres
+    depends_on:
+      - postgres
+    ports:
+      - '3000:3000'
+        
+volumes:
+  bgapi-db:
