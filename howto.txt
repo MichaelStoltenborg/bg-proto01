@@ -1,0 +1,17 @@
+// Will build new docker image
+docker build -t bgapi . 
+
+// will build multiple containers specified in docker-composer.yml
+docker-compose build
+
+// run all 
+docker-compose up bgapi
+
+//run tests
+docker-compose down 
+docker-compose build
+docker-compose up -d db-test
+cd bgapi
+npm run test
+
+// Git
