@@ -15,3 +15,7 @@ cd bgapi
 npm run test
 
 // Git
+git status
+git add .
+git commit -m "comment"
+git push
