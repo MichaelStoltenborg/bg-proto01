@@ -1,0 +1,8 @@
+{
+    "game_settings": {
+        "max_players": 4,
+        "min_players": 2,
+        "num_areas": 61,
+        "board_form": "hexagon"
+    }
+}

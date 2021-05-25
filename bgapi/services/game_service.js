@@ -69,6 +69,7 @@ class GameService {
                         throw new Error('Could not create unique game key');
             }
 
+            
             let game = await db.Game.create({
                 key: newkey,
                 created_user: user_id
